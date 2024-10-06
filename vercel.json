@@ -23,11 +23,8 @@
       {
         "source": "/my-jobs",
         "destination": "/"
-      },
-      {
-        "source": "/(.*)",
-        "destination": "/"
       }
+     
     ]
   }
   
