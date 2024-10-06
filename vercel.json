@@ -1,12 +1,28 @@
 {
     "rewrites": [
       {
-        "source": "/sign-in",
-        "destination": "/sign-in"
+        "source": "/onboarding",
+        "destination": "/"
       },
       {
-        "source": "/sign-up",
-        "destination": "/sign-up"
+        "source": "/jobs",
+        "destination": "/"
+      },
+      {
+        "source": "/job/:id",
+        "destination": "/"
+      },
+      {
+        "source": "/post-job",
+        "destination": "/"
+      },
+      {
+        "source": "/saved-job",
+        "destination": "/"
+      },
+      {
+        "source": "/my-jobs",
+        "destination": "/"
       },
       {
         "source": "/(.*)",
