@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import './index.css'
+import './index.css'  // Assuming this contains global styles
+import './App.css'    // Newly added styles for Clerk modal and carousel
 import { ClerkProvider } from '@clerk/clerk-react'
 import { shadesOfPurple } from '@clerk/themes'
 
@@ -14,10 +15,15 @@ if (!PUBLISHABLE_KEY) {
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ClerkProvider appearance={{
-      baseTheme:shadesOfPurple,
-    }} publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
+    <ClerkProvider
+      appearance={{
+        baseTheme:shadesOfPurple,
+        
+      }}
+      publishableKey={PUBLISHABLE_KEY}
+      afterSignOutUrl="/"
+    >
       <App />
     </ClerkProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 )

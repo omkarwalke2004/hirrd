@@ -38,3 +38,28 @@ padding: 15px 20px;
 border: 1px solid gray;
 cursor: pointer;
 }
+/* Ensure the Clerk modal has a high z-index to be above other components */
+.clerk-modal {
+  z-index: 1000 !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Adjust z-index for the carousel to prevent overlap with the modal */
+.carousel-container {
+  z-index: -1;
+  position: relative;
+}
+
+/* Additional styles for the carousel (optional for better UX) */
+.carousel-content {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Example background adjustment if needed */
