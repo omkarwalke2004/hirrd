@@ -17,7 +17,7 @@ const Protectedroute = ({ children }) => {
   }
 
   // If the user is signed in but has no role, redirect them to the onboarding page
-  if (!user?.unsafeMetadata?.role && pathname !== '/onboarding') {
+  if (user?.unsafeMetadata?.role && pathname !== '/onboarding') {
     return <Navigate to="/onboarding" />;
   }
 
