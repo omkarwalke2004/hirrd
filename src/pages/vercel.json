@@ -1,6 +1,0 @@
-{
-    "rewrites": [
-      { "source": "/my-jobs", "destination": "/my-jobs" }
-    ]
-  }
-  
