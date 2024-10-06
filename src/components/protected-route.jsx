@@ -3,26 +3,25 @@ import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 
 const Protectedroute = ({ children }) => {
-  const { isSignedIn, user, isLoaded } = useUser();
-  const { pathname } = useLocation();
+    const { isSignedIn, user, isLoaded } = useUser();
+    const { pathname } = useLocation();
 
-  // Wait until the user data is fully loaded before making any decisions
-  if (!isLoaded) {
-    return <div>Loading...</div>; // You can replace this with a spinner or some loading UI
-  }
+    // Wait for the user data to load before making any checks
+    if (!isLoaded) {
+        return null; // Optionally return a loader here
+    }
 
-  // If the user is not signed in, redirect to the sign-in page
-  if (!isSignedIn) {
-    return <Navigate to="/?sign-in=true" />;
-  }
+    // Redirect if the user is not signed in
+    if (!isSignedIn) {
+        return <Navigate to="/?sign-in=true" />;
+    }
 
-  // If the user is signed in but has no role, redirect them to the onboarding page
-  if (user?.unsafeMetadata?.role && pathname !== '/onboarding') {
-    return <Navigate to="/onboarding" />;
-  }
+    // Redirect to onboarding if the user has no role and is not already on the onboarding page
+    if (user && !user?.unsafeMetadata?.role && pathname !== '/onboarding') {
+        return <Navigate to="/onboarding" />;
+    }
 
-  // If all conditions are met, render the children (protected content)
-  return children;
+    return children; // Render the protected child components if all checks pass
 };
 
 export default Protectedroute;
