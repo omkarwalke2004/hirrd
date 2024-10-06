@@ -6,6 +6,7 @@ import './App.css';    // Styles for Clerk modal and carousel
 import { ClerkProvider } from '@clerk/clerk-react';
 import { shadesOfPurple } from '@clerk/themes';
 
+
 // Import your publishable key and frontend URL
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 const FRONTEND_URL = import.meta.env.VITE_CLERK_FRONTEND_URL;
